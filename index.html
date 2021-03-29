@@ -16,10 +16,57 @@
     <div class="row">
         <div class="col-lg-6">
             <div id="graph1"></div>
+            <input type="range" min="1980" max="2010" value="2006" class="slider" id="graph1Range">
+
             <div id="graph2"></div><br/>
+            <button onclick="updatePie('NA_Sales')">NA</button>
+            <button onclick="updatePie('JP_Sales')">JP</button>
+            <button onclick="updatePie('EU_Sales')">EU</button>
         </div>
         <div class="col-lg-6">
             <div id="graph3"></div>
+
+            <button onclick="updateDataG3('Action')">Action</button>
+            <button onclick="updateDataG3('Adventure')">Adventure</button>
+            <button onclick="updateDataG3('Fighting')">Fighting</button>
+            <button onclick="updateDataG3('Misc')">Misc</button>
+            <button onclick="updateDataG3('Platform')">Platform</button>
+            <button onclick="updateDataG3('Puzzle')">Puzzle</button>
+            <button onclick="updateDataG3('Racing')">Racing</button>
+            <button onclick="updateDataG3('Role-Playing')">Role-Playing</button>
+            <button onclick="updateDataG3('Shooter')">Shooter</button>
+            <button onclick="updateDataG3('Simulation')">Simulation</button>
+            <button onclick="updateDataG3('Sports')">Sports</button>
+            <button onclick="updateDataG3('Strategy')">Strategy</button>
+
+        </div class="answers">
+        <div>
+        Questions:
+            <ul>
+                <li><b>Your boss wants to know the top 10 video games of all time or top 10 for a specific year.</b></li>
+                <p>The first graph is a bar chart showing the sales for the top 10 video games of a given year. You can use the slider to look at the top 10 video games for another year. The name of the chart will update with the year that you are looking at. </p>
+                <li><b>Your boss wants to understand which genre is most popular. We'd like to see genre sales broken out per region. </b></li>
+                <p>The second graph is a pie chart showing the percent of sales for each region. You can look at other regions by clicking on their buttons. You can hover over the slices of the pie chart to see the name of that genre, and the total sales for that genre in that region.</p>
+                <li><b>Lastly, your boss wants to know which publisher to pick based on which genre a game is. Your chart should provide a clear top publisher for each genre.</b></li>
+                <p>The third graph is a bar chart showing the sales per publisher per genre. You can select different genres with the buttons.</p>
+            </ul>
+            <p><b>Why was D3 helpful?</b></p>
+            <p>1: D3 has useful functions for parsing and filtering data. The scale functions (scaleLinear and scaleBand) were very useful for making charts without having to figure out the positions of each bar.</p>
+            <p>2: D3 makes it easy to update existing charts with new data. Once you've built the chart, all you need to do is pass in the new data and the chart will update with that data. If I wasn't able to update existing charts, my visualization would be much less compact and have many more charts.</p>
+            <p>3: D3 has support for user actions like mouseover events and mouseclick events. This made adding tooltips to the pie chart not too painful</p>
+            <p><b>List 3 reasons why D3 would not be the best tool for creating a visualization</b></p>
+            <p>1: I found D3 unintuitive and hard to debug. You need to understand this tool before you can make adequate visualizations with it.</p>
+            <p>2: I really like the transitions that D3 has, but I know that those can be distracting to the point of the visualization. The fact that they are so easy to implement on top of an existing graph might lead to more fancy graphs that sacrifice readability and function for style.</p>
+            <p>3: D3 isn't as intuitive as something like creating a graph in a Google Sheet or Excel spreadsheet. You have to write code and play around with the features of the graph in D3, whereas in spreadsheets these tools are usually built in and just need you to provide the data.</p>
+            <p><b>What additional actions might you take to make this dashboard more accessible to all audiences? </b></p>
+            <p> </p>
+            <p><b>Reflect on the stages of your design and implementation process when you could have taken steps to make your dashboard more accessible to all audiences. What are some factors that kept you from taking these steps?</b></p>
+            <p>Some color-blind users might find it difficult to differentiate the different slices of the pi chart. There is a margin between each slice to make this easier for such users, and the colors on the chart aren't for any purpose but to differentiate them, but I could have found a color-blind-accessible color palette to make this less of an issue. Additionally, in "Inclusive Design", the author mentions that blind readers benefit greatly from alt tags on images or text summaries under each graph. I did not do that for any of my graphs. I could have added summaries that explain what the top game / genre / publisher is for each graph, as that is the relevant information for these visualizations.</p>
+            <p><b>Reflect on the stages of your design and implementation process when you could have taken steps to make your dashboard more accessible to all audiences. What are some factors that kept you from taking these steps?</b></p>
+            <p>One step in this process was selecting the color palettes for my graphs. I was not entirely sure how to make custom color palettes with D3, so I instead used the built-in one for the pie chart. Had I spent more time on learning how to select the correct colors for a graph, I would have made the pie chart with color-blind friendly colors.</p>
+
+
+
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
